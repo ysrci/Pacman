@@ -110,11 +110,6 @@ def visual():
     power_pellets = [(0, 0), (len(maze[0]) - 1, 0),
                      (0, len(maze) - 1),
                      (len(maze[0]) - 1, len(maze) - 1)]
-
-    # ghosts = [(1, 1),
-    #           (len(maze[0]) - 2, 1),
-    #           (1, len(maze) - 2),
-    #           (len(maze[0] - 2, len(maze) - 1))]
     song_start = True
     last_move = 0
     palb = 3
@@ -123,7 +118,6 @@ def visual():
     show_lost = False
     run = True
     player_name = ""
-    typing_name = False
     while run:
         
         for event in pygame.event.get():
@@ -214,7 +208,7 @@ def visual():
                                         (col * tile_size + tile_size // 2,
                                         row * tile_size + tile_size // 2), 8)
             now = pygame.time.get_ticks()
-            if now - last_move > 2220:
+            if now - last_move > 550:
                 blue_row, blue_col = move_ghost(maze, blue_row, blue_col, pacman_row, pacman_col)
                 red_row, red_col = move_ghost(maze, red_row, red_col, pacman_row, pacman_col)
                 pink_row, pink_col = move_ghost(maze, pink_row, pink_col, pacman_row, pacman_col)
